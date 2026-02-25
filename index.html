@@ -31,7 +31,7 @@
         .container {
             scroll-snap-type: y mandatory;
             overflow-y: scroll;
-            height: 100dvh; /* Dynamic height for mobile browsers */
+            height: 100dvh;
             scroll-behavior: smooth;
         }
 
@@ -48,12 +48,10 @@
             text-align: center;
         }
 
-        /* --- Typography --- */
         h1 { font-family: 'Pacifico', cursive; font-size: 2.5rem; color: var(--accent); margin: 15px 0; }
         h2 { font-family: 'Pacifico', cursive; font-size: 2rem; margin-bottom: 20px; color: var(--accent); }
         p { font-size: 1rem; font-weight: 500; }
 
-        /* --- Animations --- */
         @keyframes float {
             0%, 100% { transform: translateY(0px) rotate(0deg); }
             50% { transform: translateY(-15px) rotate(3deg); }
@@ -71,7 +69,6 @@
             animation: fall linear forwards;
         }
 
-        /* --- Sections --- */
         #hero { background: radial-gradient(circle, #fff0f3 0%, #ffb3c1 100%); }
         
         .big-heart-gif {
@@ -98,7 +95,6 @@
         .polaroid img { width: 100%; aspect-ratio: 1/1; object-fit: cover; border: 1px solid #eee; }
         .polaroid p { font-family: 'Dancing Script', cursive; font-size: 0.9rem; margin-top: 5px; }
 
-        /* Timeline */
         .timeline { width: 100%; max-width: 320px; text-align: left; border-left: 2px solid var(--accent); padding-left: 20px; }
         .timeline-item { margin-bottom: 25px; position: relative; }
         .timeline-item::before {
@@ -111,11 +107,10 @@
             padding: 2px;
         }
 
-        /* Stickers */
-        .sticker-wall { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+        .sticker-wall { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; max-width: 500px; }
         .sticker {
             background: white;
-            padding: 6px 14px;
+            padding: 8px 14px;
             border-radius: 20px;
             font-size: 0.85rem;
             font-weight: 700;
@@ -123,7 +118,6 @@
             box-shadow: 3px 3px 0px var(--accent);
         }
 
-        /* Letter & Interaction */
         .envelope-wrapper {
             background: var(--glass);
             backdrop-filter: blur(8px);
@@ -137,7 +131,6 @@
         .envelope-img { width: 80px; height: auto; }
         .letter-text { font-family: 'Dancing Script', cursive; font-size: 1.3rem; line-height: 1.4; }
 
-        /* Media */
         .framed-video {
             width: 100%;
             max-width: 280px;
@@ -146,10 +139,9 @@
             box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
 
-        #approval-heart { font-size: 80px; cursor: pointer; transition: 0.3s; }
+        #approval-heart { font-size: 80px; cursor: pointer; transition: 0.3s; margin-top: 10px; }
         #approval-heart:active { transform: scale(0.8); }
 
-        /* Mobile specific spacing */
         @media (max-height: 700px) {
             h1 { font-size: 2rem; }
             h2 { font-size: 1.6rem; }
@@ -202,24 +194,24 @@
     <section id="reasons">
         <h2>Why I Love You</h2>
         <div class="sticker-wall">
-            <<div class="sticker">The way you laugh</div>
-    <div class="sticker">Your morning voice</div>
-    <div class="sticker">Your kindness</div>
-    <div class="sticker">The way you look at me</div>
-    <div class="sticker">Our late night talks</div>
-    <div class="sticker">Your warm cheek</div>
-    <div class="sticker">How you act cutie</div>
-    <div class="sticker">Just being yourself</div>
-    <div class="sticker">How you make me feel safe</div>
-    <div class="sticker">Your beautiful heart</div>
-    <div class="sticker">The way you chase ur dream</div>
-    <div class="sticker">How you remember the small things</div>
-    <div class="sticker">The peace you bring me</div>
-    <div class="sticker">Your strength and grace</div>
-    <div class="sticker">How you're my part</div>
-    <div class="sticker">The way you do</div>
-    <div class="sticker">Your Charming</div>
-    <div class="sticker">All the thing of you</div>
+            <div class="sticker">The way you laugh</div>
+            <div class="sticker">Your morning voice</div>
+            <div class="sticker">Your kindness</div>
+            <div class="sticker">The way you look at me</div>
+            <div class="sticker">Our late night talks</div>
+            <div class="sticker">Your warm cheek</div>
+            <div class="sticker">How you act cutie</div>
+            <div class="sticker">Just being yourself</div>
+            <div class="sticker">How you make me feel safe</div>
+            <div class="sticker">Your beautiful heart</div>
+            <div class="sticker">The way you chase ur dream</div>
+            <div class="sticker">How you remember the small things</div>
+            <div class="sticker">The peace you bring me</div>
+            <div class="sticker">Your strength and grace</div>
+            <div class="sticker">How you're my part</div>
+            <div class="sticker">The way you do</div>
+            <div class="sticker">Your Charming</div>
+            <div class="sticker">Everything about you</div>
         </div>
     </section>
 
@@ -244,7 +236,7 @@
         <h2 style="color: white; font-size: 2.2rem;">Will you be my girlfriend?</h2>
         <p>Tap the heart if the answer is yes...</p>
         <div id="approval-heart">❤️</div>
-        <div id="approval-message" style="display:none; padding: 20px; background: rgba(255,255,255,0.2); border-radius: 15px; margin-top: 15px;">
+        <div id="approval-message" style="display:none; padding: 20px; background: rgba(255,255,255,0.2); border-radius: 15px; margin-top: 15px; width: 90%;">
             <p class="letter-text">I will treat you as well as I can. Love you so much Kaizz 💕</p>
         </div>
     </section>
@@ -283,7 +275,6 @@
         for(let i=0; i<50; i++) setTimeout(createPetal, i * 50);
     });
 
-    // Touch feedback
     document.body.addEventListener('touchstart', () => {
         createPetal();
     });
